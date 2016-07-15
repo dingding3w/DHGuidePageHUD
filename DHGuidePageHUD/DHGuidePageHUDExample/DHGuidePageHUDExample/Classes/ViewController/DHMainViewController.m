@@ -23,7 +23,7 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOLFORKEY];
         
         NSArray *imageArray = @[[UIImage imageNamed:@"guideImage1.jpg"],[UIImage imageNamed:@"guideImage2.jpg"],[UIImage imageNamed:@"guideImage3.jpg"],[UIImage imageNamed:@"guideImage4.jpg"],[UIImage imageNamed:@"guideImage5.jpg"]];
-        DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.frame imageArray:imageArray buttonIsHidden:NO];
+        DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.frame imageArray:imageArray buttonIsHidden:YES];
         [self.navigationController.view addSubview:guidePage];
     }
     
