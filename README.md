@@ -1,7 +1,7 @@
 # DHGuidePageHUD
 ###一键合成APP引导页,包含不同状态下的引导页样式,省掉冗余的代码,集成性高,使用方便;
 ## 效果图展示:
-![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-1.gif)  ![image](https://github.com/dingding3w/DHGuidePageHUD/tree/master/DHGuidePageHUD/DesignSketchGIF/Untitled-2.gif)  ![image](https://github.com/dingding3w/DHGuidePageHUD/tree/master/DHGuidePageHUD/DesignSketchGIF/Untitled-3.gif)
+![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-1.gif)  ![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-2.gif)  ![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-3.gif)
 
 ## 方法说明:
 ```objc
@@ -38,4 +38,4 @@ if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
         // 在这里写初始化图片数组和DHGuidePageHUD库引导页的代码
     }
 ```
-## <<分享是一种美德,Star是一种鼓励![image](https://github.com/dingding3w/DHGuidePageHUD/tree/master/DHGuidePageHUD/DHGuidePageHUDExample/DHGuidePageHUDExampleUITests/Untitled-star/Untitled-star.png)>>
+## <<分享是一种美德,Star是一种鼓励![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DHGuidePageHUDExample/DHGuidePageHUDExampleUITests/Untitled-star/Untitled-star.png)>>
