@@ -21,9 +21,8 @@
     // 设置APP引导页
     if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOLFORKEY];
-        
-        NSArray *imageArray = @[[UIImage imageNamed:@"guideImage1.jpg"],[UIImage imageNamed:@"guideImage2.jpg"],[UIImage imageNamed:@"guideImage3.jpg"],[UIImage imageNamed:@"guideImage4.jpg"],[UIImage imageNamed:@"guideImage5.jpg"]];
-        DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.frame imageArray:imageArray buttonIsHidden:YES];
+        NSArray *images = @[@"guideImage1.jpg",@"guideImage2.jpg",@"guideImage3.jpg",@"guideImage4.jpg",@"guideImage5.jpg"];
+        DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.frame images:images buttonIsHidden:YES];
         [self.navigationController.view addSubview:guidePage];
     }
     
