@@ -20,5 +20,5 @@
  *
  *  @return DHGuidePageHUD对象
  */
-- (instancetype)dh_initWithFrame:(CGRect)frame imageArray:(NSArray *)imageArray buttonIsHidden:(BOOL)isHidden;
+- (instancetype)dh_initWithFrame:(CGRect)frame images:(NSArray< NSString *> *)images buttonIsHidden:(BOOL)isHidden;
 @end
