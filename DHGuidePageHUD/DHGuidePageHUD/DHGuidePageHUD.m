@@ -8,9 +8,9 @@
 
 #import "DHGuidePageHUD.h"
 
-#define HIDDEN_TIME    3.0
-#define SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define DDHidden_TIME   3.0
+#define DDScreenW   [UIScreen mainScreen].bounds.size.width
+#define DDScreenH   [UIScreen mainScreen].bounds.size.height
 
 @interface DHGuidePageHUD ()<UIScrollViewDelegate>
 @property (nonatomic, strong) NSArray       *imageArray;
@@ -29,7 +29,7 @@
         // 设置引导视图的scrollview
         UIScrollView *guidePageView = [[UIScrollView alloc]initWithFrame:frame];
         [guidePageView setBackgroundColor:[UIColor lightGrayColor]];
-        [guidePageView setContentSize:CGSizeMake(SCREEN_WIDTH*imageArray.count, SCREEN_HEIGHT)];
+        [guidePageView setContentSize:CGSizeMake(DDScreenW*imageArray.count, DDScreenH)];
         [guidePageView setBounces:NO];
         [guidePageView setPagingEnabled:YES];
         [guidePageView setShowsHorizontalScrollIndicator:NO];
@@ -37,7 +37,7 @@
         [self addSubview:guidePageView];
         
         // 设置引导页上的跳过按钮
-        UIButton *skipButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.8, SCREEN_WIDTH*0.1, 50, 25)];
+        UIButton *skipButton = [[UIButton alloc]initWithFrame:CGRectMake(DDScreenW*0.8, DDScreenW*0.1, 50, 25)];
         [skipButton setTitle:@"跳过" forState:UIControlStateNormal];
         [skipButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         [skipButton setBackgroundColor:[UIColor grayColor]];
@@ -47,14 +47,14 @@
         
         // 添加在引导视图上的多张引导图片
         for (int i=0; i<imageArray.count; i++) {
-            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*i, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(DDScreenW*i, 0, DDScreenW, DDScreenH)];
             imageView.image = imageArray[i];
             [guidePageView addSubview:imageView];
             
             // 设置在最后一张图片上显示进入体验按钮
             if (i == imageArray.count-1 && isHidden == NO) {
                 [imageView setUserInteractionEnabled:YES];
-                UIButton *startButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.3, SCREEN_HEIGHT*0.8, SCREEN_WIDTH*0.4, SCREEN_HEIGHT*0.08)];
+                UIButton *startButton = [[UIButton alloc]initWithFrame:CGRectMake(DDScreenW*0.3, DDScreenH*0.8, DDScreenW*0.4, DDScreenH*0.08)];
                 [startButton setTitle:@"开始体验" forState:UIControlStateNormal];
                 [startButton setTitleColor:[UIColor colorWithRed:164/255.0 green:201/255.0 blue:67/255.0 alpha:1.0] forState:UIControlStateNormal];
                 [startButton.titleLabel setFont:[UIFont systemFontOfSize:21]];
@@ -65,7 +65,7 @@
         }
         
         // 设置引导页上的页面控制器
-        self.imagePageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(SCREEN_WIDTH*0.0, SCREEN_HEIGHT*0.9, SCREEN_WIDTH*1.0, SCREEN_HEIGHT*0.1)];
+        self.imagePageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(DDScreenW*0.0, DDScreenH*0.9, DDScreenW*1.0, DDScreenH*0.1)];
         self.imagePageControl.currentPage = 0;
         self.imagePageControl.numberOfPages = imageArray.count;
         self.imagePageControl.pageIndicatorTintColor = [UIColor grayColor];
@@ -85,9 +85,9 @@
 }
 
 - (void)buttonClick:(UIButton *)button {
-    [UIView animateWithDuration:HIDDEN_TIME animations:^{
+    [UIView animateWithDuration:DDHidden_TIME animations:^{
         self.alpha = 0;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(HIDDEN_TIME * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(DDHidden_TIME * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self performSelector:@selector(removeGuidePageHUD) withObject:nil afterDelay:1];
         });
     }];

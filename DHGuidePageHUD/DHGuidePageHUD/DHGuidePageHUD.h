@@ -18,7 +18,7 @@
  *  @param imageArray 引导页图片数组
  *  @param isHidden   开始体验按钮是否隐藏(YES:隐藏-引导页完成自动进入APP首页; NO:不隐藏-引导页完成点击开始体验按钮进入APP主页)
  *
- *  @return DHGuidePageHUD
+ *  @return DHGuidePageHUD对象
  */
 - (instancetype)dh_initWithFrame:(CGRect)frame imageArray:(NSArray *)imageArray buttonIsHidden:(BOOL)isHidden;
 @end
