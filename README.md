@@ -1,7 +1,21 @@
 # DHGuidePageHUD
 ###一键合成APP引导页,包含不同状态下的引导页样式,省掉冗余的代码,集成性高,使用方便;
 ## 效果图展示:
-![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-1.gif) ![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-4.png) ![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-2.gif)
+<table>
+	<tr>
+		<th>有导航栏手动进入体验</th>
+		<th>有导航栏自动进入体验</th>
+		<th>无导航栏手动进入体验</th>
+		<th>无导航栏自动进入体验</th>
+	</tr>
+	
+	<tr>
+		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-1.gif" width="300"></td>
+		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-2.gif" width="300"></td>
+		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-3.gif" width="300"></td>
+		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-4.gif" width="300"></td>
+	</tr>
+</table>
 
 ## 方法说明:
 ```objc
