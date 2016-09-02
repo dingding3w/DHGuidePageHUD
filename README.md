@@ -30,6 +30,14 @@ DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.f
 [self.navigationController.view addSubview:guidePage];
 ```
 
+####3.如果在首次进入项目时没有UINavigationController,也可以在[self.window makeKeyAndVisible]之后添加初始化图片数组和DHGuidePageHUD库的操作,代码如下:
+```objc
+// 在window初始化并显示后([self.window makeKeyAndVisible]后)初始化图片数组并添加引导页;
+NSArray *imageArray = @[[UIImage imageNamed:@"guideImage1.jpg"],[UIImage imageNamed:@"guideImage2.jpg"],[UIImage imageNamed:@"guideImage3.jpg"],[UIImage imageNamed:@"guideImage4.jpg"],[UIImage imageNamed:@"guideImage5.jpg"]];
+DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.window.frame imageArray:imageArray buttonIsHidden:YES];
+[self.window addSubview:guidePage];
+```
+
 ## 可能会用到的代码说明:
 ```objc
 // 使用NSUserDefaults判断程序是否第一次启动(其他方法也可以)
