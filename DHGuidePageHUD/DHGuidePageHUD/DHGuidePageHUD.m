@@ -51,6 +51,10 @@
             imageView.image = imageArray[i];
             [guidePageView addSubview:imageView];
             
+            // 后续功能实现
+            // NSData *data = UIImageJPEGRepresentation(imageView.image,1.0);
+            // NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF16StringEncoding];
+            
             // 设置在最后一张图片上显示进入体验按钮
             if (i == imageArray.count-1 && isHidden == NO) {
                 [imageView setUserInteractionEnabled:YES];
