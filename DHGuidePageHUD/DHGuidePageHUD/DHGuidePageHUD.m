@@ -19,17 +19,17 @@
 
 @implementation DHGuidePageHUD
 
-- (instancetype)dh_initWithFrame:(CGRect)frame imageArray:(NSArray *)imageArray buttonIsHidden:(BOOL)isHidden {
+- (instancetype)dh_initWithFrame:(CGRect)frame images:(NSArray< NSString *> *)images buttonIsHidden:(BOOL)isHidden; {
     if ([super initWithFrame:frame]) {
         
         if (isHidden == YES) {
-            self.imageArray = imageArray;
+            self.imageArray = images;
         }
         
         // 设置引导视图的scrollview
         UIScrollView *guidePageView = [[UIScrollView alloc]initWithFrame:frame];
         [guidePageView setBackgroundColor:[UIColor lightGrayColor]];
-        [guidePageView setContentSize:CGSizeMake(DDScreenW*imageArray.count, DDScreenH)];
+        [guidePageView setContentSize:CGSizeMake(DDScreenW*images.count, DDScreenH)];
         [guidePageView setBounces:NO];
         [guidePageView setPagingEnabled:YES];
         [guidePageView setShowsHorizontalScrollIndicator:NO];
@@ -46,9 +46,9 @@
         [self addSubview:skipButton];
         
         // 添加在引导视图上的多张引导图片
-        for (int i=0; i<imageArray.count; i++) {
+        for (int i=0; i<images.count; i++) {
             UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(DDScreenW*i, 0, DDScreenW, DDScreenH)];
-            imageView.image = imageArray[i];
+            imageView.image = [UIImage imageNamed:images[i]];
             [guidePageView addSubview:imageView];
             
             // 后续功能实现
@@ -56,7 +56,7 @@
             // NSString *dataString = [[NSString alloc] initWithData:data encoding:NSUTF16StringEncoding];
             
             // 设置在最后一张图片上显示进入体验按钮
-            if (i == imageArray.count-1 && isHidden == NO) {
+            if (i == images.count-1 && isHidden == NO) {
                 [imageView setUserInteractionEnabled:YES];
                 UIButton *startButton = [[UIButton alloc]initWithFrame:CGRectMake(DDScreenW*0.3, DDScreenH*0.8, DDScreenW*0.4, DDScreenH*0.08)];
                 [startButton setTitle:@"开始体验" forState:UIControlStateNormal];
@@ -71,7 +71,7 @@
         // 设置引导页上的页面控制器
         self.imagePageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(DDScreenW*0.0, DDScreenH*0.9, DDScreenW*1.0, DDScreenH*0.1)];
         self.imagePageControl.currentPage = 0;
-        self.imagePageControl.numberOfPages = imageArray.count;
+        self.imagePageControl.numberOfPages = images.count;
         self.imagePageControl.pageIndicatorTintColor = [UIColor grayColor];
         self.imagePageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
         [self addSubview:self.imagePageControl];
