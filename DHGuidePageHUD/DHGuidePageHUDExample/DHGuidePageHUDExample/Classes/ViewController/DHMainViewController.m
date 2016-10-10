@@ -20,8 +20,10 @@
     // Do any additional setup after loading the view.
     // 设置APP引导页
     if (![[NSUserDefaults standardUserDefaults] boolForKey:BOOLFORKEY]) {
-        NSArray *imageNameArray = @[@"guideImage1.jpg",@"guideImage2.jpg",@"guideImage3.jpg",@"guideImage4.jpg",@"guideImage5.jpg"];
-        // NSArray *imageNameArray = @[@"guideImage1.gif",@"guideImage2.gif",@"guideImage3.gif"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:BOOLFORKEY];
+        
+        // NSArray *imageNameArray = @[@"guideImage1.jpg",@"guideImage2.jpg",@"guideImage3.jpg",@"guideImage4.jpg",@"guideImage5.jpg"];
+        NSArray *imageNameArray = @[@"guideImage6.gif",@"guideImage7.gif",@"guideImage8.gif"];
         DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.frame imageNameArray:imageNameArray buttonIsHidden:YES];
         [self.navigationController.view addSubview:guidePage];
     }
