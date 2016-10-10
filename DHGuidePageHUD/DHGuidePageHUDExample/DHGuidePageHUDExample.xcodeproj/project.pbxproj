@@ -23,6 +23,7 @@
 		185B537E1D379D4B006C803C /* DHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B53761D379D4B006C803C /* DHMainViewController.m */; };
 		18D34C7B1D37899A00B3D04F /* DHGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D34C791D37899A00B3D04F /* DHGuidePageHUD.m */; };
 		18D34C7C1D37899A00B3D04F /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18D34C7A1D37899A00B3D04F /* GuideImage.bundle */; };
+		18E40E9E1DAB7C3900F47E53 /* DHGifImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E40E9D1DAB7C3900F47E53 /* DHGifImageOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		18D34C781D37899A00B3D04F /* DHGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGuidePageHUD.h; sourceTree = "<group>"; };
 		18D34C791D37899A00B3D04F /* DHGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGuidePageHUD.m; sourceTree = "<group>"; };
 		18D34C7A1D37899A00B3D04F /* GuideImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GuideImage.bundle; sourceTree = "<group>"; };
+		18E40E9C1DAB7C3900F47E53 /* DHGifImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGifImageOperation.h; sourceTree = "<group>"; };
+		18E40E9D1DAB7C3900F47E53 /* DHGifImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGifImageOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +204,8 @@
 			children = (
 				18D34C781D37899A00B3D04F /* DHGuidePageHUD.h */,
 				18D34C791D37899A00B3D04F /* DHGuidePageHUD.m */,
+				18E40E9C1DAB7C3900F47E53 /* DHGifImageOperation.h */,
+				18E40E9D1DAB7C3900F47E53 /* DHGifImageOperation.m */,
 				18D34C7A1D37899A00B3D04F /* GuideImage.bundle */,
 			);
 			name = DHGuidePageHUD;
@@ -350,6 +355,7 @@
 				185B537E1D379D4B006C803C /* DHMainViewController.m in Sources */,
 				18D34C7B1D37899A00B3D04F /* DHGuidePageHUD.m in Sources */,
 				185B53771D379D4B006C803C /* AppDelegate.m in Sources */,
+				18E40E9E1DAB7C3900F47E53 /* DHGifImageOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
