@@ -50,11 +50,11 @@
         for (int i=0; i<imageNameArray.count; i++) {
             UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(DDScreenW*i, 0, DDScreenW, DDScreenH)];
             NSData *localData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageNameArray[i] ofType:nil]];
-            imageView.image = [UIImage imageNamed:imageNameArray[i]];
             
             if ([[DHGifImageOperation dh_contentTypeForImageData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageNameArray[i] ofType:nil]]] isEqualToString:@"gif"]) {
                 [guidePageView addSubview:[[DHGifImageOperation alloc] initWithFrame:imageView.frame gifImageData:localData]];
             } else {
+                imageView.image = [UIImage imageNamed:imageNameArray[i]];
                 [guidePageView addSubview:imageView];
             }
             
