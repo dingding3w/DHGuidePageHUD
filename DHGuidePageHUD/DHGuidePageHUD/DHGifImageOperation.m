@@ -100,13 +100,12 @@
         static dispatch_once_t onceToken;
         //只执行一次
         dispatch_once(&onceToken, ^{
-            NSLog(@"请检测网络或者http协议");
+            NSLog(@"[DHGifImageOperation]:请检测网络或者http协议");
         });
     }
 }
 
 - (void)removeFromSuperview {
-    NSLog(@"removeFromSuperview");
     [timer invalidate];
     timer = nil;
     [super removeFromSuperview];
@@ -136,6 +135,6 @@
 }
 
 - (void)activiTap:(UITapGestureRecognizer*)recognizer{
-    NSLog(@"activiTap:recognizer");
+    NSLog(@"[DHGifImageOperation.h]:activiTap:recognizer");
 }
 @end
