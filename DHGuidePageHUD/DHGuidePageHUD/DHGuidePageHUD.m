@@ -87,7 +87,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview {
     int page = scrollview.contentOffset.x / scrollview.frame.size.width;
     [self.imagePageControl setCurrentPage:page];
-    if (self.imageArray && page == self.imageArray.count-1) {
+    if (self.imageArray && page == self.imageArray.count-1 && self.slideInto == NO) {
         [self buttonClick:nil];
     }
     if (self.imageArray && page < self.imageArray.count-1 && self.slideInto == YES) {
