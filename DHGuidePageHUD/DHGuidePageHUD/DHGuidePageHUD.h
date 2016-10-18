@@ -12,6 +12,10 @@
 
 @interface DHGuidePageHUD : UIView
 /**
+ *  是否支持滑动进入APP(默认为NO-不支持滑动进入APP | 只有在buttonIsHidden为YES-隐藏状态下可用; buttonIsHidden为NO-显示状态下直接点击按钮进入)
+ */
+@property (nonatomic, assign) BOOL slideInto;
+/**
  *  DHGuidePageHUD
  *
  *  @param frame      位置大小

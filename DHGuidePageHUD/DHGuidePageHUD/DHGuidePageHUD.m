@@ -16,13 +16,14 @@
 @interface DHGuidePageHUD ()<UIScrollViewDelegate>
 @property (nonatomic, strong) NSArray       *imageArray;
 @property (nonatomic, strong) UIPageControl *imagePageControl;
+@property (nonatomic, assign) NSInteger     slideIntoNumber;
 @end
 
 @implementation DHGuidePageHUD
 
 - (instancetype)dh_initWithFrame:(CGRect)frame imageNameArray:(NSArray<NSString *> *)imageNameArray buttonIsHidden:(BOOL)isHidden {
     if ([super initWithFrame:frame]) {
-        
+        self.slideInto = NO;
         if (isHidden == YES) {
             self.imageArray = imageNameArray;
         }
@@ -88,6 +89,18 @@
     [self.imagePageControl setCurrentPage:page];
     if (self.imageArray && page == self.imageArray.count-1) {
         [self buttonClick:nil];
+    }
+    if (self.imageArray && page < self.imageArray.count-1 && self.slideInto == YES) {
+        self.slideIntoNumber = 1;
+    }
+    if (self.imageArray && page == self.imageArray.count-1 && self.slideInto == YES) {
+        UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:nil action:nil];
+        if (swipeGestureRecognizer.direction == UISwipeGestureRecognizerDirectionRight){
+            self.slideIntoNumber++;
+            if (self.slideIntoNumber == 3) {
+                [self buttonClick:nil];
+            }
+        }
     }
 }
 
