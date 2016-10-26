@@ -23,6 +23,7 @@
 		185B537E1D379D4B006C803C /* DHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B53761D379D4B006C803C /* DHMainViewController.m */; };
 		18D34C7B1D37899A00B3D04F /* DHGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D34C791D37899A00B3D04F /* DHGuidePageHUD.m */; };
 		18D34C7C1D37899A00B3D04F /* GuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18D34C7A1D37899A00B3D04F /* GuideImage.bundle */; };
+		18DE22571DC0B4B0006AD511 /* guideMovie1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 18DE22561DC0B4B0006AD511 /* guideMovie1.mov */; };
 		18E40E9E1DAB7C3900F47E53 /* DHGifImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E40E9D1DAB7C3900F47E53 /* DHGifImageOperation.m */; };
 		18E40EAC1DAB986900F47E53 /* guideImage6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18E40EA91DAB986900F47E53 /* guideImage6.gif */; };
 		18E40EAD1DAB986900F47E53 /* guideImage7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18E40EAA1DAB986900F47E53 /* guideImage7.gif */; };
@@ -72,6 +73,7 @@
 		18D34C781D37899A00B3D04F /* DHGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGuidePageHUD.h; sourceTree = "<group>"; };
 		18D34C791D37899A00B3D04F /* DHGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGuidePageHUD.m; sourceTree = "<group>"; };
 		18D34C7A1D37899A00B3D04F /* GuideImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GuideImage.bundle; sourceTree = "<group>"; };
+		18DE22561DC0B4B0006AD511 /* guideMovie1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = guideMovie1.mov; sourceTree = "<group>"; };
 		18E40E9C1DAB7C3900F47E53 /* DHGifImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGifImageOperation.h; sourceTree = "<group>"; };
 		18E40E9D1DAB7C3900F47E53 /* DHGifImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHGifImageOperation.m; sourceTree = "<group>"; };
 		18E40EA91DAB986900F47E53 /* guideImage6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = guideImage6.gif; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				18E40EA91DAB986900F47E53 /* guideImage6.gif */,
 				18E40EAA1DAB986900F47E53 /* guideImage7.gif */,
 				18E40EAB1DAB986900F47E53 /* guideImage8.gif */,
+				18DE22561DC0B4B0006AD511 /* guideMovie1.mov */,
 				185B53731D379D4B006C803C /* view_bg_image.png */,
 			);
 			path = Images;
@@ -338,6 +341,7 @@
 				183F0AA91D37882000A251ED /* Assets.xcassets in Resources */,
 				185B537C1D379D4B006C803C /* guideImage5.jpg in Resources */,
 				185B537A1D379D4B006C803C /* guideImage3.jpg in Resources */,
+				18DE22571DC0B4B0006AD511 /* guideMovie1.mov in Resources */,
 				183F0AA71D37882000A251ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
