@@ -8,15 +8,19 @@
 
 #import "DHGuidePageHUD.h"
 #import "DHGifImageOperation.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVKit/AVKit.h>
 
 #define DDHidden_TIME   3.0
 #define DDScreenW   [UIScreen mainScreen].bounds.size.width
 #define DDScreenH   [UIScreen mainScreen].bounds.size.height
 
 @interface DHGuidePageHUD ()<UIScrollViewDelegate>
-@property (nonatomic, strong) NSArray       *imageArray;
-@property (nonatomic, strong) UIPageControl *imagePageControl;
-@property (nonatomic, assign) NSInteger     slideIntoNumber;
+@property (nonatomic, strong) NSArray                 *imageArray;
+@property (nonatomic, strong) UIPageControl           *imagePageControl;
+@property (nonatomic, assign) NSInteger               slideIntoNumber;
+@property (nonatomic, strong) MPMoviePlayerController *playerController;
 @end
 
 @implementation DHGuidePageHUD
@@ -115,6 +119,43 @@
 
 - (void)removeGuidePageHUD {
     [self removeFromSuperview];
+}
+
+
+/**< APP视频新特性页面(新增测试模块内容) */
+/**
+ *  调用方式:
+ *  NSURL *movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"mov" ofType:@"mov"]];
+ *  DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.bounds movieURL:movieURL];
+ */
+- (instancetype)dh_initWithFrame:(CGRect)frame movieURL:(NSURL *)movieURL {
+    if ([super initWithFrame:frame]) {
+        self.playerController = [[MPMoviePlayerController alloc] initWithContentURL:movieURL];
+        [self addSubview:self.playerController.view];
+        self.playerController.shouldAutoplay = YES;
+        [self.playerController setControlStyle:MPMovieControlStyleNone];
+        self.playerController.repeatMode = MPMovieRepeatModeOne;
+        [self.playerController.view setFrame:frame];
+        self.playerController.view.alpha = 0;
+        [UIView animateWithDuration:0.0 animations:^{
+            self.playerController.view.alpha = 1;
+            [self.playerController prepareToPlay];
+        }];
+        
+        // 视频引导页进入按钮
+        UIButton *movieStartButton = [[UIButton alloc] initWithFrame:CGRectMake(24, DDScreenH-32-48, DDScreenW-48, 48)];
+        movieStartButton.layer.borderWidth = 1;
+        movieStartButton.layer.cornerRadius = 24;
+        movieStartButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        [movieStartButton setTitle:@"开始体验" forState:UIControlStateNormal];
+        movieStartButton.alpha = 0;
+        [self.playerController.view addSubview:movieStartButton];
+        [movieStartButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [UIView animateWithDuration:DDHidden_TIME animations:^{
+            movieStartButton.alpha = 1.0;
+        }];
+    }
+    return self;
 }
 
 @end

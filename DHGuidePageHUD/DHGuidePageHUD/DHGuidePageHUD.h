@@ -13,10 +13,11 @@
 @interface DHGuidePageHUD : UIView
 /**
  *  是否支持滑动进入APP(默认为NO-不支持滑动进入APP | 只有在buttonIsHidden为YES-隐藏状态下可用; buttonIsHidden为NO-显示状态下直接点击按钮进入)
+ *  视频引导页同样不支持滑动进入APP(新增测试模块内容)
  */
 @property (nonatomic, assign) BOOL slideInto;
 /**
- *  DHGuidePageHUD
+ *  DHGuidePageHUD(图片引导页)
  *
  *  @param frame      位置大小
  *  @param imageArray 引导页图片数组(NSString)
@@ -25,4 +26,6 @@
  *  @return DHGuidePageHUD对象
  */
 - (instancetype)dh_initWithFrame:(CGRect)frame imageNameArray:(NSArray<NSString *> *)imageNameArray buttonIsHidden:(BOOL)isHidden;
+/**< DHGuidePageHUD(视频引导页-新增测试模块内容) */
+- (instancetype)dh_initWithFrame:(CGRect)frame movieURL:(NSURL *)movieURL;
 @end
