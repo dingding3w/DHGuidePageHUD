@@ -61,7 +61,7 @@
 
 #pragma mark - 设置APP视频引导页
 - (void)setVideoGuidePage {
-    NSURL *videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"mov" ofType:@"mov"]];
+    NSURL *videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"guideMovie1" ofType:@"mov"]];
     DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.bounds videoURL:videoURL];
     [self.navigationController.view addSubview:guidePage];
 }
