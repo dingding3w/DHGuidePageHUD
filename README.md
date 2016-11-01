@@ -30,6 +30,32 @@
 		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-9.gif" width="300"></td>
 	</tr>
 </table>
+## V3.0.0版
+### V3.0.0版再上新高度
+### 方法说明:
+```objc
+/**
+ *  DHGuidePageHUD(视频引导页)
+ *
+ *  @param frame    位置大小
+ *  @param videoURL 引导页视频地址
+ *
+ *  @return DHGuidePageHUD对象
+ */
+- (instancetype)dh_initWithFrame:(CGRect)frame videoURL:(NSURL *)videoURL;
+```
+
+### 使用方式:
+#### 1.下载项目或者下载项目中DHGuidePageHUD这个文件,将下载好的文件拖拽到自己的工程文件夹中,并在自己添加APP引导页的类中导入#import "DHGuidePageHUD.h"头文件;
+
+#### 2.初始化图片数组和DHGuidePageHUD库的使用,代码如下:
+```objc
+// 初始化视频URL
+NSURL *videoURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"guideMovie1" ofType:@"mov"]];
+// 创建并添加引导页
+DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.bounds videoURL:videoURL];
+[self.navigationController.view addSubview:guidePage];
+```
 ## V2.1.0版
 ### 新增方法说明:
 ```objc
