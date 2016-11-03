@@ -30,7 +30,7 @@
 		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-9.gif" width="300"></td>
 	</tr>
 </table>
-## V3.0.0版
+## V3.0.0版(添加视频引导页)
 ### 新增方法说明:
 ```objc
 /**
@@ -63,7 +63,7 @@ guidePage.slideInto = YES;
 ```
 #### 一点点小的改动效果图就不上了,详细可以看代码;
 
-## V2.0.0版
+## V2.0.0版(添加动态图片引导页)
 ### 方法说明:
 ```objc
 /**
@@ -104,7 +104,7 @@ DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.window
 [self.window addSubview:guidePage];
 ```
 
-## V1.0.0版
+## V1.0.0版(添加静态图片引导页)
 ### 方法说明:
 ```objc
 /**
