@@ -98,7 +98,7 @@
         CFRelease(ref);
     } else {
         static dispatch_once_t onceToken;
-        //只执行一次
+        // 只执行一次
         dispatch_once(&onceToken, ^{
             NSLog(@"[DHGifImageOperation]:请检测网络或者http协议");
         });
