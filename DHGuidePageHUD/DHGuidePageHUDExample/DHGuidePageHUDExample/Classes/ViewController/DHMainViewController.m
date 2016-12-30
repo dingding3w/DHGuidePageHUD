@@ -35,7 +35,7 @@
     UIImageView *bg_imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     [bg_imageView setImage:[UIImage imageNamed:@"view_bg_image"]];
     [self.view addSubview:bg_imageView];
-    [self setTitle:@"HELLO"];
+    [self setTitle:@"HELLO 2017"];
 }
 
 - (void)didReceiveMemoryWarning {
