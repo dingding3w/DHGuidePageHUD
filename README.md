@@ -3,9 +3,7 @@
 #### 声明: 部分图片来源于网络,如有涉及版权会马上删除,敬请谅解;
 ### 效果图展示:
 #### APP静态图片引导页(上) | APP动态图片引导页(下)
-
 <table>
-
 	<tr>
 		<th>有导航栏手动进入体验</th>
 		<th>有导航栏自动进入体验</th>
@@ -18,7 +16,6 @@
 		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-3.gif" width="300"></td>
 		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-4.gif" width="300"></td>
 	</tr>
-	
 	<tr>
 		<th>有导航栏手动进入体验</th>
 		<th>有导航栏自动进入体验</th>
@@ -30,8 +27,7 @@
 		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-7.gif" width="300"></td>
 		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-8.gif" width="300"></td>
 		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-9.gif" width="300"></td>
-	</tr>
-	
+	</tr>	
 </table>
 
 ## V3.0.0版(添加视频引导页)
