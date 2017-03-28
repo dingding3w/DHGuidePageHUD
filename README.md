@@ -30,6 +30,7 @@
 		<td><img src="https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-9.gif" width="300"></td>
 	</tr>
 </table>
+
 ## V3.0.0版(添加视频引导页)
 ### 新增方法说明:
 ```objc
