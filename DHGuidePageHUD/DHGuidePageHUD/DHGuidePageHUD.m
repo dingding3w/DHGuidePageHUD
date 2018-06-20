@@ -90,28 +90,71 @@
     }
     return self;
 }
+#pragma mark - ------------UIScrollView代理方方法------------
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview {
+//    int page = scrollview.contentOffset.x / scrollview.frame.size.width;
+//    [self.imagePageControl setCurrentPage:page];
+//    if (self.imageArray && page == self.imageArray.count-1 && self.slideInto == NO) {
+//        [self buttonClick:nil];
+//    }
+//    if (self.imageArray && page < self.imageArray.count-1 && self.slideInto == YES) {
+//        self.slideIntoNumber = 1;
+//    }
+//    if (self.imageArray && page == self.imageArray.count-1 && self.slideInto == YES) {
+//        UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:nil action:nil];
+//        if (swipeGestureRecognizer.direction == UISwipeGestureRecognizerDirectionRight){
+//            self.slideIntoNumber++;
+//            if (self.slideIntoNumber == 3) {
+//                [self buttonClick:nil];
+//            }
+//        }
+//    }
+//}
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview {
-    int page = scrollview.contentOffset.x / scrollview.frame.size.width;
-    [self.imagePageControl setCurrentPage:page];
-    if (self.imageArray && page == self.imageArray.count-1 && self.slideInto == NO) {
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    // 不在这里设置currentPage --- 因为当滑动比较快速的时候，就出现currentPage更新比较慢
+    // [self.imagePageControl setCurrentPage:page];
+    // 这里就不用四舍五入了，因为在scroll滚动减速完成时才执行（相当于scroolView滚动静止的那一刻），四舍五入和不四舍五入，效果都一样
+    int img_count = (int)self.imageArray.count;
+    int page = (int)(scrollView.contentOffset.x / scrollView.frame.size.width);
+    if (self.imageArray && page == img_count - 1 && self.slideInto == NO) {
         [self buttonClick:nil];
     }
-    if (self.imageArray && page < self.imageArray.count-1 && self.slideInto == YES) {
+    if (self.imageArray && page < img_count - 1 && self.slideInto == YES) {
         self.slideIntoNumber = 1;
     }
-    if (self.imageArray && page == self.imageArray.count-1 && self.slideInto == YES) {
-        UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:nil action:nil];
-        if (swipeGestureRecognizer.direction == UISwipeGestureRecognizerDirectionRight){
+    if (self.imageArray && page == img_count - 1 && self.slideInto == YES) {
+        UISwipeGestureRecognizer * swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:nil action:nil];
+        if (swipeGestureRecognizer.direction == UISwipeGestureRecognizerDirectionRight) {
             self.slideIntoNumber++;
             if (self.slideIntoNumber == 3) {
                 [self buttonClick:nil];
+                // [self handleSingleTapFrom];
             }
         }
     }
 }
 
-- (void)buttonClick:(UIButton *)button {
+// 这里也不能设置currentPage，状态无法及时更新
+//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+//{
+//    int page = (int)(scrollView.contentOffset.x / scrollView.frame.size.width);
+//    [self.imagePageControl setCurrentPage:page];
+//}
+
+// 2018-06-20 修改:新增一个代理方法，专门用来设置currentPage
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // int page = (int)(scrollView.contentOffset.x / scrollView.frame.size.width);
+    // [self.imagePageControl setCurrentPage:page];
+    
+    // 四舍五入，保证pageControl状态跟随手指滑动刷新
+    [self.imagePageControl setCurrentPage:(int)((scrollView.contentOffset.x / scrollView.frame.size.width) + 0.5f)];
+}
+
+- (void)buttonClick:(UIButton *)button
+{
     [UIView animateWithDuration:DDHidden_TIME animations:^{
         self.alpha = 0;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(DDHidden_TIME * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -120,12 +163,14 @@
     }];
 }
 
-- (void)removeGuidePageHUD {
+- (void)removeGuidePageHUD
+{
     [self removeFromSuperview];
 }
 
 /**< APP视频新特性页面(新增测试模块内容) */
-- (instancetype)dh_initWithFrame:(CGRect)frame videoURL:(NSURL *)videoURL {
+- (instancetype)dh_initWithFrame:(CGRect)frame videoURL:(NSURL *)videoURL
+{
     if ([super initWithFrame:frame]) {
         self.playerController = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
         [self.playerController.view setFrame:frame];
