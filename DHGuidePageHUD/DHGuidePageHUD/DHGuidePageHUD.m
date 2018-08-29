@@ -91,9 +91,9 @@
     return self;
 }
 
+#pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollview {
     int page = scrollview.contentOffset.x / scrollview.frame.size.width;
-    [self.imagePageControl setCurrentPage:page];
     if (self.imageArray && page == self.imageArray.count-1 && self.slideInto == NO) {
         [self buttonClick:nil];
     }
@@ -111,6 +111,12 @@
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // 四舍五入,保证pageControl状态跟随手指滑动及时刷新
+    [self.imagePageControl setCurrentPage:(int)((scrollView.contentOffset.x / scrollView.frame.size.width) + 0.5f)];
+}
+
+#pragma mark - EventClick
 - (void)buttonClick:(UIButton *)button {
     [UIView animateWithDuration:DDHidden_TIME animations:^{
         self.alpha = 0;
