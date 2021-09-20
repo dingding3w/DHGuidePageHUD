@@ -136,6 +136,7 @@
     }
 }
 
+
 // 这里也不能设置currentPage，状态无法及时更新
 //- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 //{

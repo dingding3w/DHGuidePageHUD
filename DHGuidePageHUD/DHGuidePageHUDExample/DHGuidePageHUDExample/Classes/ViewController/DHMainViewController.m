@@ -35,7 +35,8 @@
     UIImageView *bg_imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     [bg_imageView setImage:[UIImage imageNamed:@"view_bg_image"]];
     [self.view addSubview:bg_imageView];
-    [self setTitle:@"Come On 2017"];
+    
+    [self setTitle:@"Come On 2018"];
 }
 
 - (void)didReceiveMemoryWarning {
